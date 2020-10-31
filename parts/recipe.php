@@ -5,7 +5,7 @@ include $_SERVER['DOCUMENT_ROOT']."/configs/db.php";
 //если был отправлен POST-запрос 'btnOptions' (нажата кнопка "ОК")
 if(isset($_POST['btnOptions'])) {
     //проверяем чтобы отправленые поля были выбраны
-    if($_POST['color'] != "NCS" && $_POST['product'] != "Products") {
+    if($_POST['color'] != "Каталог NCS" && $_POST['product'] != "Продукты") {
         //определяем фасовку
         $packing = $_POST['packing'];
         //делаем запрос к БД на выбор цвета соответствующего из запроса
@@ -96,6 +96,6 @@ if(isset($_POST['btnOptions'])) {
         </div>
     <?php
     } else {
-        echo "Выбирете все параметры для подсчета!";
+        echo "Выбирете все параметры для подсчета рецептур";
     }
 } ?>

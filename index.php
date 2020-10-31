@@ -65,7 +65,8 @@ if(isset($_COOKIE["id"])){
     include $_SERVER['DOCUMENT_ROOT']."/parts/authorization.php";
     ?>
     </nav>
-<}
+<?php
+}
 ?>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Окт 30 2020 г., 07:25
+-- Время создания: Окт 31 2020 г., 08:27
 -- Версия сервера: 10.4.14-MariaDB
 -- Версия PHP: 7.4.10
 
@@ -38,8 +38,8 @@ CREATE TABLE `base` (
 --
 
 INSERT INTO `base` (`id`, `id_base`, `name_base`) VALUES
-(1, 1, 'white base'),
-(2, 3, 'transparent base');
+(1, 1, 'База белая'),
+(2, 3, 'База транспарентная');
 
 -- --------------------------------------------------------
 
@@ -51,32 +51,31 @@ CREATE TABLE `colorant` (
   `id` int(11) NOT NULL,
   `id_colorant` int(255) NOT NULL,
   `name_colorant` varchar(55) CHARACTER SET utf8mb4 NOT NULL,
-  `R` int(222) NOT NULL,
-  `G` int(222) NOT NULL,
-  `B` int(222) NOT NULL
+  `color_html` varchar(255) NOT NULL,
+  `price` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `colorant`
 --
 
-INSERT INTO `colorant` (`id`, `id_colorant`, `name_colorant`, `R`, `G`, `B`) VALUES
-(1, 13, 'K984 NIEBI', 41, 44, 143),
-(2, 27, 'K985 CZERW TS', 75, 46, 18),
-(3, 35, 'K986 JELTY TS', 104, 84, 4),
-(4, 38, 'K987 JELTY B', 235, 240, 19),
-(5, 63, 'K988 CZERW', 131, 5, 15),
-(6, 71, 'K989 BIA?Y', 255, 255, 255),
-(7, 89, 'K983 CZARN S', 0, 0, 0),
-(8, 133, 'K990 NIEBI S', 16, 16, 75),
-(9, 377, 'K980 JELTY A', 243, 237, 7),
-(10, 607, 'K991 POMAR', 236, 106, 28),
-(11, 644, 'K982 BORDO', 97, 1, 70),
-(12, 706, 'K995 BIA?Y FT', 254, 254, 254),
-(13, 4027, 'K981 CZERW T', 146, 66, 46),
-(14, 4036, 'K992 JELTY TR', 153, 115, 26),
-(15, 4040, 'K993 ZIELO', 16, 58, 19),
-(16, 4089, 'K994 CZARN', 41, 41, 41);
+INSERT INTO `colorant` (`id`, `id_colorant`, `name_colorant`, `color_html`, `price`) VALUES
+(1, 13, 'K984', '#292c8f', 1),
+(2, 27, 'K985', '#4b2e12', 1),
+(3, 35, 'K986', '#685404', 1),
+(4, 38, 'K987', '#ebf013', 1),
+(5, 63, 'K988', '#83050f', 1),
+(6, 71, 'K989', '#ffffff', 1),
+(7, 89, 'K983', '#000000', 1),
+(8, 133, 'K990', '#10104b', 1),
+(9, 377, 'K980', '#f3ed07', 1),
+(10, 607, 'K991', '#ec6a1b', 1),
+(11, 644, 'K982', '#600146', 1),
+(12, 706, 'K995', '#ffffff', 1),
+(13, 4027, 'K981', '#92422e', 1),
+(14, 4036, 'K992', '#99731a', 1),
+(15, 4040, 'K993', '#0e3a1a', 1),
+(16, 4089, 'K994', '#292929', 1);
 
 -- --------------------------------------------------------
 
@@ -10678,7 +10677,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id_product`, `product_name`) VALUES
-(1, 'Fasad');
+(1, 'Фасадная');
 
 -- --------------------------------------------------------
 
@@ -10697,7 +10696,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(1, 'Admin@mail.ru', 'Admin');
+(1, 'Admin@mail.ru', 'Admin'),
+(2, 'Andrey@mail.ru', '123');
 
 --
 -- Индексы сохранённых таблиц
@@ -10789,7 +10789,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
